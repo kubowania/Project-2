@@ -111,7 +111,9 @@ The API was also lacking in the full article content, and offered only a snippet
     const theLastMonth = lastMonth.toISOString().replace(/T.*/,'').split('-').join('-')
     return theLastMonth
 ```
-These are the functions we wrote to get news from the past 24hrs, 48hrs, last week and last Month. I enjoyed trying to get the format of the date exact to that needed to put in the get request of the URL if the API's documentation.
+These are the functions we wrote to get news from the past 24hrs, 48hrs, last week and last Month. I enjoyed trying to get the format of the date exact to that needed to put in the get request of the URL of the API's documentation.
+
+
 
 
 ![Imgur](https://i.imgur.com/CggN4aS.png?1)
