@@ -76,8 +76,43 @@ We decided to expand on the publishedAt key in order to create functions that le
 The API we chose had a lot of objects to work with but was very patchy. Most of the articles were missing unique ids. To get around this we used the objects url as a unique identifier for our project.
 The API was also lacking in the full article content, and offered only a snippet of text with the article url. As we did not want the user to navigate away from our website, we used an iframe to display the news article on show. This meant we could retain the news articles visual identity on our website as well. In an ideal world, the API would have had enough information for us to avoid using the iframe.
 
-### Visuals
+## Visuals and Featured Code
 
 ![Imgur](https://i.imgur.com/hv9BB1c.png?1)
+
+### Featured piece of code no.1
+
+```javascript
+  today() {
+    const today = new Date().toISOString().replace(/T.*/,'').split('-').join('-')
+    return today
+
+  }
+
+  yesterday() {
+    const current = new Date()
+    const yesterday = new Date(current.getTime() - 86400000)
+    const theYesterday = yesterday.toISOString().replace(/T.*/,'').split('-').join('-')
+    return theYesterday
+
+  }
+
+  lastWeek() {
+    const current = new Date()
+    const lastWeek = new Date(current.getTime() - (86400000 * 7))
+    const theLastWeek = lastWeek.toISOString().replace(/T.*/,'').split('-').join('-')
+    return theLastWeek
+
+  }
+
+  lastMonth() {
+    const current = new Date()
+    const lastMonth = new Date(current.getTime() - (86400000 * 30))
+    const theLastMonth = lastMonth.toISOString().replace(/T.*/,'').split('-').join('-')
+    return theLastMonth
+```
+These are the functions we wrote to get news from the past 24hrs, 48hrs, last week and last Month. I enjoyed trying to get the format of the date exact to that needed to put in the get request of the URL if the API's documentation.
+
+
 ![Imgur](https://i.imgur.com/CggN4aS.png?1)
 
